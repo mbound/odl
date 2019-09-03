@@ -3,6 +3,14 @@
 
 ## To build ODL docker container
 
+Edit Dockerfile ENV parameters according to the ODL release and basename ("karaf" or "opendaylight", certain older releases use "karaf" as the basename).
+
+```
+ENV basename karaf
+ENV release 0.8.4
+```
+
+
 ```
 docker build -t mbound/opendaylight:0.10.0 .
 ```
