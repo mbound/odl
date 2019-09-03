@@ -3,11 +3,12 @@ FROM anapsix/alpine-java:8_jdk as getodl
 RUN mkdir /odl
 WORKDIR /odl
 
-ENV release 0.10.0
+ENV basename karaf
+ENV release 0.8.4
 
 RUN apk add openssl
-RUN wget "https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/${release}/opendaylight-${release}.tar.gz"
-RUN tar xvzf opendaylight-${release}.tar.gz && mv opendaylight-${release} opendaylight
+RUN wget "https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/${basename}/${release}/${basename}-${release}.tar.gz"
+RUN tar xvzf ${basename}-${release}.tar.gz && mv ${basename}-${release} opendaylight
 
 FROM anapsix/alpine-java:8_jdk
 
