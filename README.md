@@ -27,6 +27,11 @@ With docker network:
 docker run -t -d --name odl1 mbound/opendaylight:0.10.0
 ```
 
+With port forwarding:
+```
+docker run -t -d -p 8181:8181 --name odl1 mbound/opendaylight:0.10.0
+```
+
 ## Now let's log into ODL
 
 With host network:
